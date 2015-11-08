@@ -6,6 +6,8 @@
 
 package com.awesome.DTO;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Timea Kiss <cph-tk10@cphbusiness.dk>
@@ -13,25 +15,34 @@ package com.awesome.DTO;
 public class RouteDTO {
     
     private HarborDTO departure, arrival;
-    private DiscountDTO residentDiscount;
-    private String season;
+    private ArrayList<DiscountDTO> discounts;
     private double price;
     private boolean carsAllowed;
 
-    public DiscountDTO getResidentDiscount() {
-        return residentDiscount;
+    public RouteDTO(HarborDTO departure, HarborDTO arrival, ArrayList<DiscountDTO> discounts, String season, double price, boolean carsAllowed) {
+        this.departure = departure;
+        this.arrival = arrival;
+        this.discounts = discounts;
+        this.price = price;
+        this.carsAllowed = carsAllowed;
+    }
+    
+    
+
+    public ArrayList<DiscountDTO> getDiscounts() {
+        return discounts;
     }
 
-    public void setResidentDiscount(DiscountDTO residentDiscount) {
-        this.residentDiscount = residentDiscount;
+    public void setDiscounts(ArrayList<DiscountDTO> discounts) {
+        this.discounts = discounts;
     }
 
-    public String getSeason() {
-        return season;
+    public boolean isCarsAllowed() {
+        return carsAllowed;
     }
 
-    public void setSeason(String season) {
-        this.season = season;
+    public void setCarsAllowed(boolean carsAllowed) {
+        this.carsAllowed = carsAllowed;
     }
 
     public double getPrice() {

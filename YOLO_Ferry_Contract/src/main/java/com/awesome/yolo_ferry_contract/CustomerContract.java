@@ -18,10 +18,11 @@ import java.util.ArrayList;
  */
 public interface CustomerContract {
     
+    //Select trip
     public ArrayList<HarborDTO> getAllHarbors();
-    //list of possible routes based on the departure harbor
     public ArrayList<RouteDTO> getHarborRoutes(int harborID);
     public ArrayList<TimeTableDTO> getTimeTable(int routeID);
+    //create booking
     public boolean createBooking(BookingDTO booking);
     
 }

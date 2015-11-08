@@ -16,6 +16,10 @@ public class HarborDTO {
     
     private String city;
 
+    public HarborDTO(String city) {
+        this.city = city;
+    }
+
     public String getCity() {
         return city;
     }

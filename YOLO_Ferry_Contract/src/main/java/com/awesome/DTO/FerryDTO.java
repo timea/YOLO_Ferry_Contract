@@ -14,10 +14,27 @@ import java.util.ArrayList;
  */
 public class FerryDTO {
     
-    private String size, season;
+    private String size;
     private ArrayList<RouteDTO> route;
     private boolean booked;
     private int year;
+    private String OwnerMunicipality;
+
+    public FerryDTO(String size, ArrayList<RouteDTO> route, boolean booked, int year, String OwnerMunicipality) {
+        this.size = size;
+        this.route = route;
+        this.booked = booked;
+        this.year = year;
+        this.OwnerMunicipality = OwnerMunicipality;
+    }
+
+    public String getOwnerMunicipality() {
+        return OwnerMunicipality;
+    }
+
+    public void setOwnerMunicipality(String OwnerMunicipality) {
+        this.OwnerMunicipality = OwnerMunicipality;
+    }
 
     public String getSize() {
         return size;
@@ -25,14 +42,6 @@ public class FerryDTO {
 
     public void setSize(String size) {
         this.size = size;
-    }
-
-    public String getSeason() {
-        return season;
-    }
-
-    public void setSeason(String season) {
-        this.season = season;
     }
 
     public ArrayList<RouteDTO> getRoute() {
