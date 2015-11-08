@@ -16,6 +16,7 @@ public class RouteDTO {
     private DiscountDTO residentDiscount;
     private String season;
     private double price;
+    private boolean carsAllowed;
 
     public DiscountDTO getResidentDiscount() {
         return residentDiscount;
