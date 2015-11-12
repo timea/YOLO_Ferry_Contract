@@ -10,6 +10,8 @@ import com.awesome.DTO.DiscountDTO;
 import com.awesome.DTO.FerryDTO;
 import com.awesome.DTO.HarborDTO;
 import com.awesome.DTO.RouteDTO;
+import com.awesome.DTO.TimeTableDTO;
+import java.sql.Time;
 import java.util.ArrayList;
 
 /**
@@ -30,4 +32,6 @@ public interface AdminContract {
     //magane harbors   
     public boolean createHarbor(String name);
     public HarborDTO editHarbor(int harborID, String name);
+    
+    public boolean createTimeTable(Time departure, Time arrival, RouteDTO route);
 }

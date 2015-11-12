@@ -19,7 +19,7 @@ public class RouteDTO {
     private double price;
     private boolean carsAllowed;
 
-    public RouteDTO(HarborDTO departure, HarborDTO arrival, ArrayList<DiscountDTO> discounts, String season, double price, boolean carsAllowed) {
+    public RouteDTO(HarborDTO departure, HarborDTO arrival, ArrayList<DiscountDTO> discounts, double price, boolean carsAllowed) {
         this.departure = departure;
         this.arrival = arrival;
         this.discounts = discounts;

@@ -15,6 +15,36 @@ import java.util.ArrayList;
  */
 public class TimeTableDTO {
     
-    private ArrayList<Time> sailingTimes;
-    
+    private Time departureTime, arrivalTime;
+    private RouteDTO route;
+
+    public TimeTableDTO(Time departureTime, Time arrivalTime, RouteDTO route) {
+        this.departureTime = departureTime;
+        this.arrivalTime = arrivalTime;
+        this.route = route;
+    }
+
+    public Time getDepartureTime() {
+        return departureTime;
+    }
+
+    public void setDepartureTime(Time departureTime) {
+        this.departureTime = departureTime;
+    }
+
+    public Time getArrivalTime() {
+        return arrivalTime;
+    }
+
+    public void setArrivalTime(Time arrivalTime) {
+        this.arrivalTime = arrivalTime;
+    }
+
+    public RouteDTO getRoute() {
+        return route;
+    }
+
+    public void setRoute(RouteDTO route) {
+        this.route = route;
+    }
 }
