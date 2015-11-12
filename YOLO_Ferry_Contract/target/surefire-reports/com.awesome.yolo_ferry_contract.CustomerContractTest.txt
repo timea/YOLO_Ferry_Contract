@@ -1,4 +1,35 @@
 -------------------------------------------------------------------------------
 Test set: com.awesome.yolo_ferry_contract.CustomerContractTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.275 sec
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.135 sec <<< FAILURE!
+initializationError(com.awesome.yolo_ferry_contract.CustomerContractTest)  Time elapsed: 0.029 sec  <<< ERROR!
+java.lang.ExceptionInInitializerError
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at junit.framework.TestSuite.createTest(TestSuite.java:65)
+	at junit.framework.TestSuite.addTestMethod(TestSuite.java:307)
+	at junit.framework.TestSuite.addTestsFromTestCase(TestSuite.java:150)
+	at junit.framework.TestSuite.<init>(TestSuite.java:129)
+	at org.junit.internal.runners.JUnit38ClassRunner.<init>(JUnit38ClassRunner.java:74)
+	at org.junit.internal.builders.JUnit3Builder.runnerForClass(JUnit3Builder.java:11)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:26)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:33)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:51)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: java.lang.RuntimeException: Uncompilable source code - static import only from classes and interfaces
+	at com.awesome.yolo_ferry_contract.CustomerContractTest.<clinit>(CustomerContractTest.java:16)
+	... 26 more

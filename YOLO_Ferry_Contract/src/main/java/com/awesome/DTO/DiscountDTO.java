@@ -15,6 +15,12 @@ public class DiscountDTO {
     private int discountPercent;
     private String description;
 
+    public DiscountDTO(int discountPercent, String description) {
+        this.discountPercent = discountPercent;
+        this.description = description;
+    }
+    
+
     public String getDescription() {
         return description;
     }
