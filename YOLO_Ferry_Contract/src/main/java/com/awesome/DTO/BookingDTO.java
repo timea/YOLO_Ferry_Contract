@@ -6,7 +6,7 @@
 
 package com.awesome.DTO;
 
-import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  *
@@ -20,7 +20,7 @@ public class BookingDTO {
     private int vehicles;
     private VehicleDTO vehicle;
     private String bookingTime;
-    private ArrayList<DiscountDTO> discount;
+    private Collection<DiscountDTO> discount;
 
     public RouteDTO getRoute() {
         return route;
@@ -70,11 +70,11 @@ public class BookingDTO {
         this.bookingTime = bookingTime;
     }
 
-    public ArrayList<DiscountDTO> getDiscount() {
+    public Collection<DiscountDTO> getDiscount() {
         return discount;
     }
 
-    public void setDiscount(ArrayList<DiscountDTO> discount) {
+    public void setDiscount(Collection<DiscountDTO> discount) {
         this.discount = discount;
     }
 

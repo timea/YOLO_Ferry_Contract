@@ -15,14 +15,12 @@ import java.util.ArrayList;
 public class FerryDTO {
     
     private String size;
-    private ArrayList<RouteDTO> route;
     private boolean booked;
     private int year;
     private String OwnerMunicipality;
 
-    public FerryDTO(String size, ArrayList<RouteDTO> route, boolean booked, int year, String OwnerMunicipality) {
+    public FerryDTO(String size, boolean booked, int year, String OwnerMunicipality) {
         this.size = size;
-        this.route = route;
         this.booked = booked;
         this.year = year;
         this.OwnerMunicipality = OwnerMunicipality;
@@ -44,14 +42,6 @@ public class FerryDTO {
         this.size = size;
     }
 
-    public ArrayList<RouteDTO> getRoute() {
-        return route;
-    }
-
-    public void setRoute(ArrayList<RouteDTO> route) {
-        this.route = route;
-    }
-
     public boolean isBooked() {
         return booked;
     }
@@ -66,8 +56,6 @@ public class FerryDTO {
 
     public void setYear(int year) {
         this.year = year;
-    }
-    
-    
+    } 
     
 }

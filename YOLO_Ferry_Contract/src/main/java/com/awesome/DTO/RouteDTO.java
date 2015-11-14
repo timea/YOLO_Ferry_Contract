@@ -6,7 +6,7 @@
 
 package com.awesome.DTO;
 
-import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  *
@@ -15,42 +15,18 @@ import java.util.ArrayList;
 public class RouteDTO {
     
     private HarborDTO departure, arrival;
-    private ArrayList<DiscountDTO> discounts;
+    private Collection<DiscountDTO> discounts;
+    private Collection<FerryDTO> ferries;
     private double price;
     private boolean carsAllowed;
 
-    public RouteDTO(HarborDTO departure, HarborDTO arrival, ArrayList<DiscountDTO> discounts, double price, boolean carsAllowed) {
+    public RouteDTO(HarborDTO departure, HarborDTO arrival, Collection<DiscountDTO> discounts, Collection<FerryDTO> ferries, double price, boolean carsAllowed) {
         this.departure = departure;
         this.arrival = arrival;
         this.discounts = discounts;
+        this.ferries = ferries;
         this.price = price;
         this.carsAllowed = carsAllowed;
-    }
-    
-    
-
-    public ArrayList<DiscountDTO> getDiscounts() {
-        return discounts;
-    }
-
-    public void setDiscounts(ArrayList<DiscountDTO> discounts) {
-        this.discounts = discounts;
-    }
-
-    public boolean isCarsAllowed() {
-        return carsAllowed;
-    }
-
-    public void setCarsAllowed(boolean carsAllowed) {
-        this.carsAllowed = carsAllowed;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public HarborDTO getDeparture() {
@@ -68,10 +44,37 @@ public class RouteDTO {
     public void setArrival(HarborDTO arrival) {
         this.arrival = arrival;
     }
-    
-    
 
-    
-    
+    public Collection<DiscountDTO> getDiscounts() {
+        return discounts;
+    }
+
+    public void setDiscounts(Collection<DiscountDTO> discounts) {
+        this.discounts = discounts;
+    }
+
+    public Collection<FerryDTO> getFerries() {
+        return ferries;
+    }
+
+    public void setFerries(Collection<FerryDTO> ferries) {
+        this.ferries = ferries;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public boolean isCarsAllowed() {
+        return carsAllowed;
+    }
+
+    public void setCarsAllowed(boolean carsAllowed) {
+        this.carsAllowed = carsAllowed;
+    }
     
 }
