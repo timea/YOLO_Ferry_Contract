@@ -12,26 +12,18 @@ import com.awesome.DTO.HarborDTO;
 import com.awesome.DTO.RouteDTO;
 import com.awesome.DTO.TimeTableDTO;
 import java.sql.Time;
-import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  *
  * @author Timea Kiss <cph-tk10@cphbusiness.dk>
  */
 public interface AdminContract {
-    
+     public Collection<RouteDTO> getAllRoutes();
+   
     //manage ferries use case
-    public ArrayList<RouteDTO> getAllRoutes();
-    public boolean createFerry(String size, ArrayList<RouteDTO> route, int year, String OwnerMunicipality);
-    public FerryDTO editFerry(int ferryID, String size, ArrayList<RouteDTO> route, int year, String OwnerMunicipality);
+    public Collection<FerryDTO> getAllFerries();
+    public boolean createFerry(String size, Collection<RouteDTO> route, int year, String OwnerMunicipality);
+    public FerryDTO editFerry(int ferryID, String size, Collection<RouteDTO> route, int year, String OwnerMunicipality);
     
-    //manage routes
-    public boolean createRoute(HarborDTO departure, HarborDTO arrival, ArrayList<DiscountDTO> discounts, double price, boolean carsAllowed);
-    public RouteDTO editRoute(int routeID, HarborDTO departure, HarborDTO arrival, ArrayList<DiscountDTO> discounts, double price, boolean carsAllowed);
-    
-    //magane harbors   
-    public boolean createHarbor(String name);
-    public HarborDTO editHarbor(int harborID, String name);
-    
-    public boolean createTimeTable(Time departure, Time arrival, RouteDTO route);
 }

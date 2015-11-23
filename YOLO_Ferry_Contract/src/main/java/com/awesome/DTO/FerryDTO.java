@@ -18,12 +18,14 @@ public class FerryDTO {
     private boolean booked;
     private int year;
     private String OwnerMunicipality;
+    private boolean active;
 
-    public FerryDTO(String size, boolean booked, int year, String OwnerMunicipality) {
+    public FerryDTO(String size, boolean booked, int year, String OwnerMunicipality, boolean active) {
         this.size = size;
         this.booked = booked;
         this.year = year;
         this.OwnerMunicipality = OwnerMunicipality;
+        this.active=active;
     }
 
     public String getOwnerMunicipality() {
