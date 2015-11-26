@@ -3,78 +3,97 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.awesome.DTO;
 
 import java.util.Collection;
 
 /**
  *
- * @author Timea Kiss <cph-tk10@cphbusiness.dk>
+ * @author stefan
  */
 public class RouteDTO {
+     private Integer id;
+   
+    private HarborDTO startPoint, endPoint;
+    /* true if only residents can bring their cars*/
+    private boolean onlyResidentialVehicles;
+    private Collection<TimeTableDTO> timeTables;
+    //it's better to work with Integer for price and then devided by 100
+    private Integer passangerPrice,vehiclePrice;
+    /**
+     * This constructor should not be used to create a new route
+     * @pre 
+     *  @param id the unique identifier
+     *  @param startPoint
+     *  @param endPoint
+     *  @param onlyResidentialVehicles will tell us if the buyer of the ticket will need special permissions to take a vehicle to that ending point
+     *  @param TimeTableDTO represents the diffrent timetables for that route, and each TimeTable will have a ferry assigned to it
+     *  @param passangerPrice  the price per passenger
+     *  @param priceCar the vehicle price
+     */
+    public RouteDTO(Integer id, HarborDTO startPoint, HarborDTO endPoint, boolean onlyResidentialVehicles, Collection<TimeTableDTO> timeTables, Integer passangerPrice, Integer vehiclePrice) {
+        this.id = id;
+        this.startPoint = startPoint;
+        this.endPoint = endPoint;
+        this.onlyResidentialVehicles = onlyResidentialVehicles;
+        this.timeTables = timeTables;
+        this.passangerPrice = passangerPrice;
+        this.vehiclePrice = vehiclePrice;
+    }
+
     
-    private HarborDTO departure, arrival;
-    private Collection<DiscountDTO> discounts;
-    private Collection<FerryDTO> ferries;
-    private double price;
-    private boolean carsAllowed;
 
-    public RouteDTO(HarborDTO departure, HarborDTO arrival, Collection<DiscountDTO> discounts, Collection<FerryDTO> ferries, double price, boolean carsAllowed) {
-        this.departure = departure;
-        this.arrival = arrival;
-        this.discounts = discounts;
-        this.ferries = ferries;
-        this.price = price;
-        this.carsAllowed = carsAllowed;
+    public Integer getId() {
+        return id;
     }
 
-    public HarborDTO getDeparture() {
-        return departure;
+    public Integer getPassangerPrice() {
+        return passangerPrice;
     }
 
-    public void setDeparture(HarborDTO departure) {
-        this.departure = departure;
+    public Integer getCarPrice() {
+        return vehiclePrice;
     }
 
-    public HarborDTO getArrival() {
-        return arrival;
+    public void setPassangerPrice(Integer passangerPrice) {
+        this.passangerPrice = passangerPrice;
     }
 
-    public void setArrival(HarborDTO arrival) {
-        this.arrival = arrival;
+    public void setCarPrice(Integer carPrice) {
+        this.vehiclePrice = carPrice;
+    }
+   
+
+    public HarborDTO getStartPoint() {
+        return startPoint;
     }
 
-    public Collection<DiscountDTO> getDiscounts() {
-        return discounts;
+    public HarborDTO getEndPoint() {
+        return endPoint;
     }
 
-    public void setDiscounts(Collection<DiscountDTO> discounts) {
-        this.discounts = discounts;
+    public boolean isOnlyResidentialVehicles() {
+        return onlyResidentialVehicles;
     }
 
-    public Collection<FerryDTO> getFerries() {
-        return ferries;
+    public Collection<TimeTableDTO> getTimeTables() {
+        return timeTables;
     }
 
-    public void setFerries(Collection<FerryDTO> ferries) {
-        this.ferries = ferries;
+    public void setStartPoint(HarborDTO startPoint) {
+        this.startPoint = startPoint;
     }
 
-    public double getPrice() {
-        return price;
+    public void setEndPoint(HarborDTO endPoint) {
+        this.endPoint = endPoint;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setOnlyResidentialVehicles(boolean onlyResidentialVehicles) {
+        this.onlyResidentialVehicles = onlyResidentialVehicles;
     }
 
-    public boolean isCarsAllowed() {
-        return carsAllowed;
-    }
-
-    public void setCarsAllowed(boolean carsAllowed) {
-        this.carsAllowed = carsAllowed;
+    public void setTimeTables(Collection<TimeTableDTO> timeTables) {
+        this.timeTables = timeTables;
     }
     
 }

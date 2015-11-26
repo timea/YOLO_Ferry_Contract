@@ -13,46 +13,36 @@ import java.util.Collection;
  * @author Timea Kiss <cph-tk10@cphbusiness.dk>
  */
 public class BookingDTO {
-    
-    private RouteDTO route;
-    private int passengers;
-    private AccountDTO userAccount;
-    private int vehicles;
+    private Integer totalNoPassengers;
+    private PassengerDTO Passangers;
     private VehicleDTO vehicle;
+    private RouteDTO goRoute,backRoute;
+  /** 
+     * @pre 
+     *  @param totalNoPassangers included the ticket
+     *  @param VehicleDTO which can be null
+     *  @param goRoute for going this is mandatory
+     *  @param backRoute for return, this is optional
+  */
+    public BookingDTO(Integer totalNoPassangers, PassengerDTO Passengers, VehicleDTO vehicle, RouteDTO route, RouteDTO backRoute) {
+        this.totalNoPassengers = totalNoPassangers;
+        this.Passangers = Passengers;
+        this.vehicle = vehicle;
+        this.goRoute = goRoute;
+        this.backRoute=backRoute;
+    }
+    
     private String bookingTime;
-    private Collection<DiscountDTO> discount;
-
+   
     public RouteDTO getRoute() {
-        return route;
+        return goRoute;
     }
 
     public void setRoute(RouteDTO route) {
-        this.route = route;
+        this.goRoute = route;
     }
 
-    public int getPassengers() {
-        return passengers;
-    }
-
-    public void setPassengers(int passengers) {
-        this.passengers = passengers;
-    }
-
-    public AccountDTO getUserAccount() {
-        return userAccount;
-    }
-
-    public void setUserAccount(AccountDTO userAccount) {
-        this.userAccount = userAccount;
-    }
-
-    public int getVehicles() {
-        return vehicles;
-    }
-
-    public void setVehicles(int vehicles) {
-        this.vehicles = vehicles;
-    }
+  
 
     public VehicleDTO getVehicle() {
         return vehicle;
@@ -70,16 +60,22 @@ public class BookingDTO {
         this.bookingTime = bookingTime;
     }
 
-    public Collection<DiscountDTO> getDiscount() {
-        return discount;
+    public void setTotalNoPassangers(Integer totalNoPassangers) {
+        this.totalNoPassengers = totalNoPassangers;
     }
 
-    public void setDiscount(Collection<DiscountDTO> discount) {
-        this.discount = discount;
+    public void setPassangers(PassengerDTO Passangers) {
+        this.Passangers = Passangers;
     }
 
+    public Integer getTotalNoPassangers() {
+        return totalNoPassengers;
+    }
+
+    public PassengerDTO getPassangers() {
+        return Passangers;
+    }
+
+    
    
-    
-    
-    
 }

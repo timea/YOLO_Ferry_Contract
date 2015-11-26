@@ -3,21 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.awesome.DTO;
-
-import java.util.ArrayList;
 
 /**
  *
- * @author Timea Kiss <cph-tk10@cphbusiness.dk>
+ * @author stefan
  */
 public class HarborDTO {
-    
     private String city;
+    //to do refactor it into ENUM
+    private LandFormDTO landform;
 
-    public HarborDTO(String city) {
+    public HarborDTO(String city, LandFormDTO landform) {
         this.city = city;
+        this.landform = landform;
     }
 
     public String getCity() {
@@ -27,6 +26,13 @@ public class HarborDTO {
     public void setCity(String city) {
         this.city = city;
     }
-    
+
+    public void setLandform(LandFormDTO landform) {
+        this.landform = landform;
+    }
+
+    public LandFormDTO getLandform() {
+        return landform;
+    }
     
 }

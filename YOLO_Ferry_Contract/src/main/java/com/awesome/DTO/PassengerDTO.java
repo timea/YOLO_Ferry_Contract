@@ -10,10 +10,36 @@ package com.awesome.DTO;
  *
  * @author Timea Kiss <cph-tk10@cphbusiness.dk>
  */
-public class UserDTO {
+public class PassengerDTO {
     
-    private String firstName, lastName, address, phone;
-    private boolean hasPermanentAddress, hasCar;
+    private String cpr,firstName, lastName, address, phone;
+    private boolean hasPermanentAddress;
+  /**
+     * @pre 
+     *  @param cpr the unique identifier
+     *  @param firstName
+     *  @param lastName
+     *  @param address of the passenger
+     *  @param phone
+     *  @param hasPermanentAddress will tell the system if the passenger is a resident or not
+     */
+  
+    public PassengerDTO(String cpr, String firstName, String lastName, String address, String phone, boolean hasPermanentAddress) {
+        this.cpr = cpr;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.phone = phone;
+        this.hasPermanentAddress = hasPermanentAddress;
+    }
+
+    public void setCpr(String cpr) {
+        this.cpr = cpr;
+    }
+
+    public String getCpr() {
+        return cpr;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -47,13 +73,7 @@ public class UserDTO {
         this.phone = phone;
     }
 
-    public boolean isHasCar() {
-        return hasCar;
-    }
 
-    public void setHasCar(boolean hasCar) {
-        this.hasCar = hasCar;
-    }
 
     public boolean isHasPermanentAddress() {
         return hasPermanentAddress;

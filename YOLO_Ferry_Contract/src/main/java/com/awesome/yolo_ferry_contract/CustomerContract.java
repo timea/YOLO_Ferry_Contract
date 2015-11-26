@@ -14,14 +14,20 @@ import java.util.Collection;
 public interface CustomerContract {
     /**
      * Books a ticket for one or more people and their vehicle
-     * @param booking all the needed information to book a ticket/tickets for a user
-     * @return the result if the booking was successfully made or not
+     * @pre
+     *  @param booking all the needed information to book a ticket/tickets for a user
+     * @throws DataNoTransactionDTO the booking could not be created
+     * @post
+     *  @return the result if the booking was successfully made or not
      */
     public boolean createBooking(BookingDTO booking);
     /**
      * This will return all the data about the different routes in the system
      * This will include harbors and timetables
-     * @return the list with all the routes in the system 
+     * @pre 
+     *  @throws DataNoFetchETO if the data can't be fetched
+     * @post return all information about the different routes
+     *  @return the Collection with all the routes in the system 
      */
     public Collection<RouteDTO> getRouteList();
 }

@@ -14,37 +14,53 @@ import java.util.ArrayList;
  * @author Timea Kiss <cph-tk10@cphbusiness.dk>
  */
 public class TimeTableDTO {
-    
+     private Integer id;
+   
     private Time departureTime, arrivalTime;
-    private RouteDTO route;
-
-    public TimeTableDTO(Time departureTime, Time arrivalTime, RouteDTO route) {
+    private FerryDTO ferry;
+    /**
+     * This constructor should not be used to create a new TimeTable
+     * @pre 
+     *  @param the unique identifier
+     *  @param depatureTime from the starting point
+     *  @param arrivalTime to the ending point
+     *  @param the ferry that will be used in the journey
+ 
+     */
+    public TimeTableDTO(Integer id, Time departureTime, Time arrivalTime, FerryDTO ferry) {
+        this.id = id;
         this.departureTime = departureTime;
         this.arrivalTime = arrivalTime;
-        this.route = route;
+        this.ferry = ferry; 
     }
 
-    public Time getDepartureTime() {
-        return departureTime;
+    public Integer getId() {
+        return id;
     }
-
+  
     public void setDepartureTime(Time departureTime) {
         this.departureTime = departureTime;
-    }
-
-    public Time getArrivalTime() {
-        return arrivalTime;
     }
 
     public void setArrivalTime(Time arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
 
-    public RouteDTO getRoute() {
-        return route;
+    public void setFerry(FerryDTO ferry) {
+        this.ferry = ferry;
     }
 
-    public void setRoute(RouteDTO route) {
-        this.route = route;
+    public Time getDepartureTime() {
+        return departureTime;
     }
+
+    public Time getArrivalTime() {
+        return arrivalTime;
+    }
+
+    public FerryDTO getFerry() {
+        return ferry;
+    }
+
+ 
 }
