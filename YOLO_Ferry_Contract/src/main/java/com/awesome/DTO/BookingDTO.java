@@ -3,37 +3,36 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.awesome.DTO;
-
-import java.util.Collection;
 
 /**
  *
  * @author Timea Kiss <cph-tk10@cphbusiness.dk>
  */
 public class BookingDTO {
+
     private Integer totalNoPassengers;
     private PassengerDTO Passangers;
     private VehicleDTO vehicle;
-    private RouteDTO goRoute,backRoute;
-  /** 
-     * @pre 
-     *  @param totalNoPassangers included the ticket
-     *  @param VehicleDTO which can be null
-     *  @param goRoute for going this is mandatory
-     *  @param backRoute for return, this is optional
-  */
-    public BookingDTO(Integer totalNoPassangers, PassengerDTO Passengers, VehicleDTO vehicle, RouteDTO route, RouteDTO backRoute) {
+    private RouteDTO goRoute, backRoute;
+
+    /**
+     * @pre @param totalNoPassangers included the ticket
+     * @param passengers which can be null
+     * @param vehicle which can be null
+     * @param goRoute for going this is mandatory
+     * @param backRoute for return, this is optional
+     */
+    public BookingDTO(Integer totalNoPassangers, PassengerDTO passengers, VehicleDTO vehicle, RouteDTO goRoute, RouteDTO backRoute) {
         this.totalNoPassengers = totalNoPassangers;
-        this.Passangers = Passengers;
+        this.Passangers = passengers;
         this.vehicle = vehicle;
         this.goRoute = goRoute;
-        this.backRoute=backRoute;
+        this.backRoute = backRoute;
     }
-    
+
     private String bookingTime;
-   
+
     public RouteDTO getRoute() {
         return goRoute;
     }
@@ -41,8 +40,6 @@ public class BookingDTO {
     public void setRoute(RouteDTO route) {
         this.goRoute = route;
     }
-
-  
 
     public VehicleDTO getVehicle() {
         return vehicle;
@@ -76,6 +73,4 @@ public class BookingDTO {
         return Passangers;
     }
 
-    
-   
 }
